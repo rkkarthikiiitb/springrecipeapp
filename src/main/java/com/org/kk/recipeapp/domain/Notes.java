@@ -4,40 +4,43 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 
 @Entity
 public class Notes {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
-	@OneToOne
-	private Recipe recipe;
-	private String recipeNotes;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	public Long getId() {
-		return Id;
-	}
+    @OneToOne
+    private Recipe recipe;
 
-	public void setId(Long id) {
-		Id = id;
-	}
+    @Lob
+    private String recipeNotes;
 
-	public Recipe getRecipe() {
-		return recipe;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setRecipe(Recipe recipe) {
-		this.recipe = recipe;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getRecipeNotes() {
-		return recipeNotes;
-	}
+    public Recipe getRecipe() {
+        return recipe;
+    }
 
-	public void setRecipeNotes(String recipeNotes) {
-		this.recipeNotes = recipeNotes;
-	}
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
+    }
 
+    public String getRecipeNotes() {
+        return recipeNotes;
+    }
+
+    public void setRecipeNotes(String recipeNotes) {
+        this.recipeNotes = recipeNotes;
+    }
 }
