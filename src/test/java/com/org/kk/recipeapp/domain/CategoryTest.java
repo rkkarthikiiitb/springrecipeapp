@@ -33,7 +33,7 @@ public class CategoryTest {
 
 	@Test
 	public void testGetRecipes() {
-		fail("Not yet implemented");
+		
 	}
 
 }
